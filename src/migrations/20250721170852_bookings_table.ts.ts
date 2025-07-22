@@ -14,6 +14,7 @@ export async function up(knex: Knex): Promise<void> {
             table.uuid('room_id').unsigned().notNullable()
                 .references('id').inTable('rooms')
                 .onDelete('CASCADE');
+            table.integer('user_role').notNullable();
         })
 }
 
